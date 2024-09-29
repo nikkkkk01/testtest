@@ -1,75 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name=”viewport” content=”width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0″ />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-	<link rel="stylesheet" href="proposal.css">
-				<meta charset="UTF-8">
-				<title>Proposal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .buttons {
+            margin: 20px;
+            position: relative;
+            height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #noBtn {
+            left: 50%;
+            transform: translateX(-110%);
+            background-color: red;
+        }
+        #yesBtn {
+            left: 50%;
+            transform: translateX(10%);
+            background-color: lightgreen;
+        }
+    </style>
 </head>
 <body>
-				<div class="g1">
-						<div class="group1">
-  				<button id="btt1">NO</button>	
-					<button id="btt2">NO</button>	
- 		  		<button id="btt3">NO</button>	
-					<button id="btt4">NO</button>	
-					<button id="btt5">NO</button>	
-					<button id="btt6">NO</button>	
-					<button id="btt7">NO</button>				
-					<button id="btt8">NO</button>	
-					<button id="btt9">NO</button>	
-					<button id="btt10">NO</button>	
-					<button id="btt11">NO</button>	
-					<button id="btt12">NO</button>	
-					
-				</div>		
-							<div class="images1">
-				<img class="sadcat" id="sadcat" src="sadcat.jpeg" alt="">
-		<img class="crying" id="crying" src="sad-guy-crying-guy.gif" alt="">
-		
-	<img class="sadboi" id="sadboi" src="sadboi.jpeg" alt="">
-	<img id="sadsad" src="sadsad.jpeg" alt="">
-	</div
-					</div>
-				
-				<div class="ask">
-						
-												<p> <span class="crush">HI CRUSH</span> <br>
-																I like you a lot, wanna go on a date?</p>
-								<div class="btn">
-<a href="yes.html"><button id="btn1">Yes</button>		</a>			    <button id="btn2">No</button>
-								</div>				
-<img id="hands" src="hands.png" alt="">								
-				</div>					
-				
-				<div class="g1">
-				<div class="images2">
-								<div class="group1">
-  					<button id="bbtt1">NO</button>	
-					<button id="bbtt2">NO</button>	
- 		  		<button id="bbtt3">NO</button>	
-					<button id="bbtt4">NO</button>	
-					<button id="bbtt5">NO</button>	
-					<button id="bbtt6">NO</button>	
-					<button id="bbtt7">NO</button>				
-					<button id="bbtt8">NO</button>	
-					<button id="bbtt9">NO</button>	
-					<button id="bbtt10">NO</button>	
-					<button id="bbtt11">NO</button>	
-					<button id="bbtt12">NO</button>	
-				</div>
-								
-								<div class="images1">
-				
-	<img class="sadman" id="sadman" src="sadman.jpeg" alt="">
-	
-	<img class="hahahuhu" id="hahahuhu" src="sad-man-tik-tok-meme.gif" alt="">
-	
-	<img id="hang" src="hang.jpeg" alt="">
-	
-	<img id="frog" src="frog.jpeg" alt="">
-				
-				<script src="proposalv2.js"></script>
+
+    <h1>Will you go on a date with me?</h1>
+    
+    <div class="buttons">
+        <button id="noBtn">NO</button>
+        <button id="yesBtn">YES</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const buttonsDiv = document.querySelector('.buttons');
+
+        noBtn.addEventListener('click', function() {
+            const maxWidth = buttonsDiv.clientWidth - noBtn.offsetWidth;
+            const maxHeight = buttonsDiv.clientHeight - noBtn.offsetHeight;
+            const randomX = Math.random() * maxWidth;
+            const randomY = Math.random() * maxHeight;
+
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+
+        yesBtn.addEventListener('click', function() {
+            window.location.href = 'https://fiqtor.github.io/flowers-for-someone';
+        });
+    </script>
+
 </body>
 </html>
